@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Entrar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center padding>
+  <h1 class="brand">B Have</h1>
+  
+  <p>Quer ser um membro ativo do B-Have? Participe da nossa comunidade online! 
+    </p>
+  <ion-list>
+    <ion-item>
+      <ion-input  round type="email" placeholder="Email" name="email" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Senha" name="password" #password></ion-input>
+    </ion-item>
+  </ion-list>
+  <button id="loginBtn" round (click)='login()' ion-button icon-start>
+     <ion-icon name="log-in"></ion-icon>Entrar</button>
+    
+     <button id="signupBtn" ion-button round (click)='openSignup();' color="danger">
+       Criar uma nova conta
+      </button>
+      <div class="orContent">
+      <h2 class="or"><span>ou</span></h2>
+      <button  id="loginFacebook" (click)="loginViaFacebook()" round ion-button icon-start>
+          <ion-icon name="logo-facebook"></ion-icon>Entrar com o Facebook</button>
+        </div>
+</ion-content>
+

@@ -1,0 +1,7 @@
+{
+  "name": "bHaveApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

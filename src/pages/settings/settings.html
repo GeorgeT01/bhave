@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+
+      <ion-item>
+        <ion-label>Primeiro nome:</ion-label>
+        <ion-input type="text" id="fnameTxt" [(ngModel)]="firstName"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Último nome:</ion-label>
+        <ion-input type="text" id="lnameTxt" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+
+
+      <ion-item (click)="openMyPosts()">
+        Minhas postagens 
+        <button ion-button clear item-end>Visão</button>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Notificação</ion-label>
+          <ion-toggle checked="false"></ion-toggle>
+        </ion-item>
+
+
+
+  </ion-list>
+<div text-center>
+  <button id="saveBtn" (click)="updateData();" ion-button round>Salvar as alterações</button>
+</div>
+</ion-content>

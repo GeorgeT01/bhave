@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1 text-center class="brand">B Have</h1>
+  <ion-list no-line>
+    <ion-item>
+      <ion-input type='text' placeholder='Primeiro nome' [(ngModel)]="fname"></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-input type='text' placeholder='Último nome' [(ngModel)]="lname"></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-input type='email' placeholder='Email'  [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type='password' placeholder='Senha'  [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+  <button ion-button round block (click)="Register()">
+    Inscrever-se
+  </button>
+  </div>
+
+</ion-content>
+

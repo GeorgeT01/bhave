@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sobre</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h6>
+        O aplicativo “B-Have” é um software de interface interativo cuja função é reduzir a distância entre aqueles que possuem interesse em reciclar e empresas do setor de comercialização de resíduos urbanos. Por meio de associações de funcionários que lidam com esses resíduos, disponibilizamos serviços que podem ir até sua casa e assim aumentar a capacidade de reciclagem de Belo Horizonte e seu entorno. 
+    </h6>
+    <hr>
+    <div text-center>
+<p>Avalie nosso produto</p>
+<ionic3-star-rating 
+    activeIcon = "ios-star"
+    defaultIcon = "ios-star-outline"
+    activeColor = "#FFFF00" 
+    defaultColor = "#95A5A6"
+    readonly="false"
+    [rating]="2">
+</ionic3-star-rating>
+</div>
+<hr>
+<div text-center>
+  <p>Indique um amigo ao nosso serviço</p>
+  <!-- Share Button -->
+      <button class="shareBtn" ion-button color="dark" (click)="share()" round icon-start>
+        <ion-icon name="share-alt"></ion-icon> 
+        Compartilhar
+      </button>
+      <p>V 1.0 Demo</p>
+</div>
+
+
+</ion-content>

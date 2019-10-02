@@ -1,0 +1,45 @@
+
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>B Have Comunidade</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <!--Refreshing... , Pull to Refresh--> 
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Puxar para atualizar"
+        refreshingSpinner="circles"
+        refreshingText="Refrescante...">
+      </ion-refresher-content>
+      </ion-refresher>
+      
+<ion-list no-lines *ngFor="let item of items" >
+    <ion-card>
+        <ion-item>
+          <h2>{{item.user_fname}} {{item.user_lname}}</h2>
+        <p>{{item.post_date}} às {{item.post_time}}</p>
+      </ion-item>
+      <ion-card-content>
+          <p>{{item.des}}</p>
+      </ion-card-content>
+      <ion-row>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col> <ion-note></ion-note></ion-col>
+            </ion-row>
+    </ion-card>
+   
+</ion-list>
+
+  <ion-fab  bottom right>
+    <button ion-fab (click)='openForm();'><ion-icon name="chatbubbles"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

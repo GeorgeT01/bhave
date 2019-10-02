@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Empresas parceiras</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+     <!-- Added in V2 -->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <!--Refreshing... , Pull to Refresh--> 
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Puxar para atualizar"
+          refreshingSpinner="circles"
+          refreshingText="Refrescante...">
+        </ion-refresher-content>
+        </ion-refresher>
+
+  <p style="color:black;">
+    A coleta de lixo é feita conforme sua região, portando veja qual empresa que se encontra mais parto da sua residência:
+  </p>
+  <ion-list no-lines *ngFor="let item of items" >
+<ion-card>
+    <ion-card-content>
+        <ion-grid>
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="../../assets/imgs/company_logo.png"/>
+              </ion-avatar>
+              <p>{{item.company_name}}</p>
+            </ion-item>
+            <ion-list>
+              <ion-item text-wrap> <ion-icon name="call"></ion-icon> {{item.company_phone}}</ion-item>
+              <ion-item text-wrap> <ion-icon name="mail"></ion-icon> {{item.company_email}}</ion-item>
+              <ion-item text-wrap> <ion-icon name="globe"></ion-icon> {{item.company_website}}</ion-item>
+              <ion-item text-wrap>  <ion-icon name="pin"></ion-icon> {{item.company_address}}</ion-item>
+            </ion-list>
+          </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+</ion-content>
+
