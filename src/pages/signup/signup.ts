@@ -22,7 +22,7 @@ export class SignupPage
     private http: Http,
     public loading: LoadingController,
     public menuCtrl: MenuController) { }
-
+//validate
   Register(){
     if( !this.fname.trim() || this.fname == "")
     {
@@ -81,7 +81,7 @@ export class SignupPage
       content: 'Por favor, espere…', });
 
     loader.present().then(() => {
-    this.http.post('https://baity.com.br/bhave/signup.php',data, options)
+    this.http.post('url',data, options)
     .map(res => res.json())
     .subscribe(res => {
     loader.dismiss()
