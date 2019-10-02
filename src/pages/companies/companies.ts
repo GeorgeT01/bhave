@@ -14,9 +14,10 @@ export class CompaniesPage
 
     this.showData();
   }
+  // load data from api 
   showData()
   {
-    this.data = this.http.get('https://baity.com.br/bhave/company.php');
+    this.data = this.http.get(url);
     this.data.subscribe(data =>{
       this.items = data; 
     });
