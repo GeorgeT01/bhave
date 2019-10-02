@@ -24,9 +24,9 @@ export class MypostsPage
 
     
     }
-
+// delete post by _id
 delPost(post_id){
-
+//msg
   let alert = this.alertCtrl.create({
     title: 'Tem certeza de que deseja excluir esta postagem?',
     message: 'você não pode desfazer essa ação!',
@@ -50,11 +50,11 @@ delPost(post_id){
         };
         let loader = this.loading.create({ content: 'Por favor, espere…', });
         loader.present().then(() => {
-        this.http.post('https://baity.com.br/bhave/delpost.php', data, options)
+        this.http.post(url, data, options)
         .map(res => res.json())
         .subscribe(res => {
         loader.dismiss();
-        
+        //remove
         if(res == "removed"){
           this.getMyPosts();
         }else{
@@ -62,7 +62,7 @@ delPost(post_id){
           let alert = this.alertCtrl.create({
             title:"ERRO!",
             subTitle:"",
-            buttons: ['OK'] });
+            buttons: ['OK'] });//btn
             alert.present();
         }
         });
@@ -81,28 +81,28 @@ delPost(post_id){
 
 
 }
-
+// get user's posts
   getMyPosts()
   {
     var headers = new Headers();
     headers.append("Accept", 'application/json');
-    headers.append('Content-Type', 'application/json' );
+    headers.append('Content-Type', 'application/json' );//json
     let options = new RequestOptions({ headers: headers });
     let data = {
     user_id: localStorage.getItem('currentUser')
   };
   let loader = this.loading.create({ content: 'Por favor, espere…', });
   loader.present().then(() => {
-  this.http.post('https://baity.com.br/bhave/myposts.php', data, options)
+  this.http.post(url, data, options)
   .map(res => res.json())
   .subscribe(res => {
   loader.dismiss();
 
 if(res == "Error"){
   let alert = this.alertCtrl.create({
-    title:"ERRO!",
-    subTitle:"",
-    buttons: ['OK'] });
+    title:"ERRO!",//error
+    subTitle:"",// empty
+    buttons: ['OK'] });//btn
     alert.present();
 }else{
 
