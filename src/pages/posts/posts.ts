@@ -25,16 +25,16 @@ export class PostsPage
   {
     this.showData();
   }
-
+// load data
   showData()
   {
-    this.data = this.http.get('https://baity.com.br/bhave/posts.php');
+    this.data = this.http.get('url');
     this.data.subscribe(data =>{
       this.items = data; 
     });
   }
 
-
+// refresher 
   doRefresh(refresher) 
   {
     this.data.subscribe(data =>{
@@ -42,7 +42,7 @@ export class PostsPage
     refresher.complete(); 
     });
   }
-
+// open form to insert new post
   openForm()
   {
  
@@ -84,9 +84,9 @@ export class PostsPage
               
               let loader = this.loading.create({
                 content: 'Por favor, espere…', });
-          
+          // show alert dialog
               loader.present().then(() => {
-              this.http2.post('https://baity.com.br/bhave/insert.php',dataInfo, options)
+              this.http2.post('url',dataInfo, options)
               .map(res => res.json())
               .subscribe(res => {
               loader.dismiss()
