@@ -41,7 +41,7 @@ export class SettingsPage
   };
   let loader = this.loading.create({ content: 'Por favor, espere…', });
   loader.present().then(() => {
-  this.http.post('https://baity.com.br/bhave/settings.php', data, options)
+  this.http.post('url', data, options)
   .map(res => res.json())
   .subscribe(res => {
   loader.dismiss();
@@ -74,7 +74,7 @@ this.lastName = res[0].user_lname;
 openMyPosts(){
   this.navCtrl.push(MypostsPage);
 }
-
+// validate
 updateData(){
 
   // let regExp = new RegExp('^[A-Za-z0-9? ]+$');
