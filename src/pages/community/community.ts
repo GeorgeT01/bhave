@@ -34,7 +34,7 @@ export class CommunityPage
   openSignup(){
     this.navCtrl.push(SignupPage);
   }
-
+// validate inputs then login
   login(){
     if(this.email.value=="" ){
       let alert = this.alertCtrl.create({
@@ -63,7 +63,7 @@ export class CommunityPage
     }
     let loader = this.loading.create({ content: 'Por favor, espere…', });
     loader.present().then(() => {
-    this.http.post('https://baity.com.br/bhave/login.php',data,options)
+    this.http.post(url,data,options)
     .map(res => res.json())
     .subscribe(res => {
     loader.dismiss()
@@ -99,7 +99,7 @@ export class CommunityPage
     }
     }
 
-
+// login using Facebook api 
     loginViaFacebook(){
       this.fb.login(['email','public_profile']).then((res: FacebookLoginResponse) => {
         this.fb.api('me?fields=id,email,first_name,last_name',[]).then(profile=>{
@@ -183,7 +183,7 @@ export class CommunityPage
         });
         }
         else
-        {
+        {// show error msg
           let alert = this.alertCtrl.create({
           title:'ERRO!',
           subTitle:(res),
